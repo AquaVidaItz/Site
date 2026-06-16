@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqua Vida Itz — Peça sua água em Imperatriz</title>
+<meta name="description" content="Água Cristal Sul 20L com entrega rápida em Imperatriz. Peça pelo site e finalize no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#071326;
+    --night-2:#0c1f3a;
+    --ink-card:#0f2744;
+    --line: rgba(255,255,255,0.08);
+    --ice:#F2F8FC;
+    --ice-dim: rgba(242,248,252,0.62);
+    --ice-faint: rgba(242,248,252,0.38);
+    --water:#2E9FE6;
+    --water-deep:#1B6FB0;
+    --water-glow: rgba(46,159,230,0.35);
+    --sun:#FF6B35;
+    --sun-soft: rgba(255,107,53,0.16);
+    --good:#3FCF8E;
+    --radius: 18px;
+    --maxw: 1140px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(46,159,230,0.16), transparent 60%),
+      radial-gradient(700px 500px at -10% 10%, rgba(255,107,53,0.10), transparent 55%),
+      var(--night);
+    color:var(--ice);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Archivo Black', 'Inter', sans-serif; line-height:1.05; margin:0;}
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'Space Mono', monospace; letter-spacing:0.02em;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  /* ---------- focus visibility ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--sun);
+    outline-offset:3px;
+    border-radius:8px;
+  }
+
+  /* ================= TOPBAR ================= */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(7,19,38,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%;
+    background:radial-gradient(circle at 30% 25%, #6fc6ff, var(--water) 55%, var(--water-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px; box-shadow:0 0 0 3px rgba(46,159,230,0.18);
+  }
+  .brand-name{font-family:'Archivo Black'; font-size:15px; letter-spacing:0.01em;}
+  .brand-name span{color:var(--water);}
+  .topbar-cta{
+    display:flex; align-items:center; gap:14px;
+    font-family:'Space Mono'; font-size:12.5px; color:var(--ice-dim);
+  }
+  .topbar-cart{
+    display:flex; align-items:center; gap:8px;
+    background:var(--ink-card); border:1px solid var(--line);
+    padding:8px 14px; border-radius:100px; font-size:13px; color:var(--ice);
+    cursor:pointer; font-family:'Inter'; font-weight:600;
+  }
+  .topbar-cart .count{
+    background:var(--sun); color:#0A1628; font-weight:800;
+    border-radius:50%; width:20px; height:20px; display:flex;
+    align-items:center; justify-content:center; font-size:11px;
+  }
+
+  /* ================= HERO ================= */
+  .hero{ padding:64px 0 48px; position:relative; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.1fr 0.7fr; gap:48px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Space Mono'; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--sun); background:var(--sun-soft); border:1px solid rgba(255,107,53,0.35);
+    padding:6px 12px; border-radius:100px; margin-bottom:22px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--sun); animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+  .hero h1{
+    font-size:clamp(36px, 5vw, 58px);
+    color:var(--ice);
+  }
+  .hero h1 .accent{color:var(--water);}
+  .hero-sub{
+    margin-top:20px; font-size:17px; color:var(--ice-dim); max-width:480px; line-height:1.55;
+  }
+  .hero-actions{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
+  .btn{
+    font-family:'Inter'; font-weight:700; font-size:15px;
+    padding:15px 26px; border-radius:100px; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:10px; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:linear-gradient(135deg, #34D399, #14b87f);
+    color:#06231a; box-shadow:0 10px 30px -10px rgba(20,184,127,0.6);
+  }
+  .btn-primary:hover{box-shadow:0 14px 34px -8px rgba(20,184,127,0.75);}
+  .btn-ghost{
+    background:transparent; border:1px solid var(--line); color:var(--ice);
+  }
+  .btn-ghost:hover{border-color:var(--water);}
+
+  .hero-meta{
+    display:flex; gap:28px; margin-top:36px; flex-wrap:wrap;
+  }
+  .meta-item{font-size:13px; color:var(--ice-faint);}
+  .meta-item b{display:block; font-family:'Space Mono'; font-size:20px; color:var(--ice); font-weight:700;}
+
+  /* ---- thermo / hydration gauge signature element ---- */
+  .gauge-card{
+    background:linear-gradient(180deg, var(--ink-card), #0a1f38);
+    border:1px solid var(--line); border-radius:24px; padding:28px;
+    position:relative; overflow:hidden;
+  }
+  .gauge-card::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 80% 0%, rgba(255,107,53,0.18), transparent 60%);
+    pointer-events:none;
+  }
+  .gauge-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;}
+  .gauge-title{font-family:'Space Mono'; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ice-faint);}
+  .gauge-temp{font-family:'Archivo Black'; font-size:26px; color:var(--sun);}
+  .gauge-body{display:flex; align-items:flex-end; gap:18px;}
+  .tube{
+    width:34px; height:190px; border-radius:20px;
+    background:#04101f; border:1px solid var(--line);
+    position:relative; overflow:hidden; flex-shrink:0;
+  }
+  .tube-fill{
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(180deg, #6fc6ff, var(--water) 40%, var(--water-deep));
+    border-radius:0 0 20px 20px;
+    animation:rise 2.2s ease-out forwards, wobble 3.5s ease-in-out infinite 2.2s;
+    height:0%;
+  }
+  @keyframes rise{ to { height:22%; } }
+  @keyframes wobble{ 0%,100%{height:22%;} 50%{height:26%;} }
+  .gauge-readout{flex:1;}
+  .gauge-readout p{font-size:13.5px; color:var(--ice-dim); line-height:1.6;}
+  .gauge-readout .lvl{
+    font-family:'Archivo Black'; font-size:32px; color:var(--ice); margin-bottom:6px;
+  }
+  .gauge-readout .lvl span{font-size:16px; color:var(--ice-faint); font-family:'Inter'; font-weight:600;}
+  .gauge-foot{
+    margin-top:18px; padding-top:16px; border-top:1px solid var(--line);
+    display:flex; align-items:center; gap:10px; font-size:12.5px; color:var(--good);
+    font-family:'Space Mono';
+  }
+
+  /* ================= STRIP ================= */
+  .strip{
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,0.02);
+    padding:18px 0; overflow:hidden;
+  }
+  .strip-track{
+    display:flex; gap:48px; white-space:nowrap; font-family:'Space Mono'; font-size:13px;
+    color:var(--ice-faint); animation:scroll 22s linear infinite;
+  }
+  .strip-track span{display:flex; align-items:center; gap:10px;}
+  .strip-track span b{color:var(--water);}
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){
+    .strip-track{animation:none;}
+  }
+
+  /* ================= SECTION HEADERS ================= */
+  .section{ padding:72px 0; }
+  .section-head{ margin-bottom:38px; max-width:600px; }
+  .section-tag{
+    font-family:'Space Mono'; font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--water); margin-bottom:10px; display:block;
+  }
+  .section h2{ font-size:clamp(26px, 3.4vw, 36px); color:var(--ice); }
+  .section-head p{ margin-top:12px; color:var(--ice-dim); font-size:15.5px; line-height:1.6; }
+
+  /* ================= PRODUCTS ================= */
+  .products{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+  .product-card{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px; display:flex; flex-direction:column; gap:16px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .product-card:hover{ border-color:rgba(46,159,230,0.4); transform:translateY(-3px); }
+  .product-card.featured{
+    border-color:var(--water); background:linear-gradient(165deg, #11335a, var(--ink-card) 60%);
+    position:relative;
+  }
+  .badge-pop{
+    position:absolute; top:-12px; left:24px; background:var(--sun); color:#1a0a02;
+    font-family:'Space Mono'; font-size:10.5px; font-weight:700; padding:5px 12px;
+    border-radius:100px; letter-spacing:0.02em; white-space:nowrap;
+  }
+  .product-visual{
+    height:130px; border-radius:14px; background:linear-gradient(160deg, #0a2440, #061425);
+    display:flex; align-items:center; justify-content:center; font-size:56px;
+    border:1px solid var(--line);
+  }
+  .product-name{ font-family:'Inter'; font-weight:800; font-size:18px; color:var(--ice); }
+  .product-desc{ font-size:13.5px; color:var(--ice-dim); line-height:1.5; }
+  .product-price-row{
+    display:flex; align-items:baseline; gap:8px; margin-top:auto;
+  }
+  .price{ font-family:'Archivo Black'; font-size:26px; color:var(--ice); }
+  .price-unit{ font-size:12.5px; color:var(--ice-faint); }
+  .price-old{ font-size:13px; color:var(--ice-faint); text-decoration:line-through; }
+
+  .qty-row{
+    display:flex; align-items:center; justify-content:space-between;
+    background:#04101f; border:1px solid var(--line); border-radius:100px; padding:6px;
+  }
+  .qty-btn{
+    width:34px; height:34px; border-radius:50%; border:none; background:var(--ink-card);
+    color:var(--ice); font-size:18px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .15s ease;
+  }
+  .qty-btn:hover{ background:var(--water-deep); }
+  .qty-val{ font-family:'Space Mono'; font-size:16px; font-weight:700; min-width:28px; text-align:center; }
+  .add-btn{
+    width:100%; padding:13px; border-radius:100px; border:none; cursor:pointer;
+    background:var(--water); color:#04101f; font-weight:800; font-size:14.5px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .add-btn:hover{ background:#52b4f0; }
+  .add-btn:active{ transform:scale(0.97); }
+  .add-btn.in-cart{ background:var(--good); color:#06231a; }
+
+  /* ================= HOW IT WORKS ================= */
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .step{
+    background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; position:relative;
+  }
+  .step-num{
+    font-family:'Space Mono'; font-size:13px; color:var(--water); margin-bottom:14px;
+  }
+  .step h3{ font-family:'Inter'; font-weight:700; font-size:15.5px; color:var(--ice); margin-bottom:8px; }
+  .step p{ font-size:13px; color:var(--ice-dim); line-height:1.5; }
+
+  /* ================= CART / ORDER SUMMARY ================= */
+  .order-section{
+    background:linear-gradient(180deg, rgba(46,159,230,0.05), transparent);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .order-grid{ display:grid; grid-template-columns: 1fr 380px; gap:32px; align-items:start; }
+  .cart-list{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px; min-height:140px;
+  }
+  .cart-empty{
+    padding:48px 20px; text-align:center; color:var(--ice-faint); font-size:14px;
+  }
+  .cart-item{
+    display:flex; align-items:center; gap:14px; padding:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .cart-item:last-child{ border-bottom:none; }
+  .cart-item .ic{ font-size:30px; width:46px; text-align:center; }
+  .cart-item .info{ flex:1; }
+  .cart-item .info b{ display:block; font-size:14.5px; color:var(--ice); }
+  .cart-item .info span{ font-size:12.5px; color:var(--ice-faint); }
+  .cart-item .price-side{ display:flex; align-items:center; gap:14px; }
+  .cart-item .line-total{ font-family:'Space Mono'; font-size:15px; font-weight:700; min-width:70px; text-align:right; }
+  .remove-btn{
+    background:none; border:none; color:var(--ice-faint); cursor:pointer; font-size:18px;
+    width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  }
+  .remove-btn:hover{ color:var(--sun); background:rgba(255,107,53,0.1); }
+
+  .summary-card{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; position:sticky; top:90px;
+  }
+  .summary-card h3{ font-family:'Inter'; font-weight:800; font-size:17px; color:var(--ice); margin-bottom:18px; }
+  .summary-row{
+    display:flex; justify-content:space-between; font-size:14px; color:var(--ice-dim);
+    padding:10px 0; border-bottom:1px solid var(--line);
+  }
+  .summary-row.total{
+    border-bottom:none; padding-top:16px; font-size:18px; font-weight:800; color:var(--ice);
+  }
+  .summary-row.total .v{ font-family:'Archivo Black'; color:var(--water); }
+
+  .field{ margin-top:18px; }
+  .field label{
+    display:block; font-size:12.5px; color:var(--ice-faint); margin-bottom:7px;
+    font-family:'Space Mono'; text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .field input, .field textarea, .field select{
+    width:100%; background:#04101f; border:1px solid var(--line); border-radius:10px;
+    padding:12px 14px; color:var(--ice); font-family:'Inter'; font-size:14.5px;
+  }
+  .field textarea{ resize:vertical; min-height:64px; }
+  .field input::placeholder, .field textarea::placeholder{ color:var(--ice-faint); }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline:none; border-color:var(--water);
+  }
+  .radio-pay{ display:flex; gap:10px; flex-wrap:wrap; }
+  .radio-pay label{
+    flex:1; display:flex; align-items:center; gap:8px; cursor:pointer;
+    background:#04101f; border:1px solid var(--line); border-radius:10px; padding:10px 12px;
+    font-size:13px; color:var(--ice-dim);
+  }
+  .radio-pay input{ width:auto; accent-color:var(--water); }
+  .radio-pay input:checked + span{ color:var(--ice); font-weight:700; }
+
+  .mode-toggle{ display:flex; gap:8px; }
+  .mode-btn{
+    flex:1; padding:12px 10px; border-radius:10px; border:1px solid var(--line);
+    background:#04101f; color:var(--ice-dim); font-family:'Inter'; font-weight:700; font-size:13.5px;
+    cursor:pointer; transition:all .15s ease;
+  }
+  .mode-btn:hover{ border-color:rgba(46,159,230,0.5); }
+  .mode-btn.active{
+    background:var(--water); border-color:var(--water); color:#04101f;
+  }
+
+  .wa-submit{
+    width:100%; margin-top:22px; padding:17px; border-radius:100px; border:none; cursor:pointer;
+    background:#25D366; color:#06210f; font-weight:800; font-size:16px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 12px 30px -10px rgba(37,211,102,0.5);
+  }
+  .wa-submit:hover{ transform:translateY(-2px); box-shadow:0 16px 36px -8px rgba(37,211,102,0.65); }
+  .wa-submit:disabled{ opacity:0.45; cursor:not-allowed; transform:none; box-shadow:none; }
+  .form-hint{ font-size:11.5px; color:var(--ice-faint); margin-top:10px; text-align:center; line-height:1.5; }
+
+  /* ================= FAQ ================= */
+  .faq-item{
+    border-bottom:1px solid var(--line); padding:20px 0;
+  }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+    font-weight:700; font-size:15.5px; color:var(--ice);
+  }
+  .faq-q .chev{ transition:transform .2s ease; color:var(--water); font-size:18px; }
+  .faq-item.open .chev{ transform:rotate(45deg); }
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+    font-size:14px; color:var(--ice-dim); line-height:1.6;
+  }
+  .faq-item.open .faq-a{ max-height:200px; padding-top:14px; }
+
+  /* ================= FOOTER ================= */
+  footer{ border-top:1px solid var(--line); padding:40px 0; }
+  .foot-grid{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .foot-brand{ display:flex; align-items:center; gap:10px; font-family:'Archivo Black'; font-size:14px; }
+  .foot-links{ display:flex; gap:22px; font-size:13px; color:var(--ice-dim); }
+  .foot-fine{ margin-top:24px; font-size:12px; color:var(--ice-faint); text-align:center; }
+
+  /* ================= FLOATING WHATSAPP ================= */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:#25D366; color:#06210f; border:none; border-radius:100px;
+    padding:15px 22px; font-weight:800; font-size:14.5px; cursor:pointer;
+    display:flex; align-items:center; gap:10px;
+    box-shadow:0 14px 34px -8px rgba(37,211,102,0.55);
+    transition:transform .15s ease;
+  }
+  .float-wa:hover{ transform:scale(1.04); }
+  .float-wa .fc{
+    background:var(--sun); color:#1a0a02; font-size:11px; font-weight:800;
+    border-radius:50%; width:20px; height:20px; display:flex; align-items:center; justify-content:center;
+  }
+  @media (max-width:880px){ .float-wa span.label{ display:none; } .float-wa{ padding:15px; } }
+
+  /* ================= TOAST ================= */
+  .toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink-card); border:1px solid var(--good); color:var(--ice);
+    padding:13px 22px; border-radius:100px; font-size:13.5px; font-weight:600;
+    opacity:0; pointer-events:none; transition:all .25s ease; z-index:70;
+    display:flex; align-items:center; gap:10px; white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast .dot{ width:8px; height:8px; border-radius:50%; background:var(--good); }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .products{ grid-template-columns:repeat(2,1fr); }
+    .steps{ grid-template-columns:repeat(2,1fr); }
+    .order-grid{ grid-template-columns:1fr; }
+    .summary-card{ position:static; }
+  }
+  @media (max-width:620px){
+    .products{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .hero-meta{ gap:18px; }
+    .topbar-cta .label-text{ display:none; }
+    .section{ padding:52px 0; }
+    .hero{ padding:40px 0 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">💧</div>
+      <div class="brand-name">AQUA <span>VIDA</span> ITZ</div>
+    </div>
+    <div class="topbar-cta">
+      <span class="label-text">Imperatriz – MA</span>
+      <div class="topbar-cart" onclick="scrollToOrder()">
+        🛒 <span class="label-text">Carrinho</span> <span class="count" id="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> ENTREGA HOJE EM IMPERATRIZ</div>
+      <h1>Sua casa não <span class="accent">fica seca</span><br>nem no dia mais quente.</h1>
+      <p class="hero-sub">Água Cristal Sul 20L, galões e refis com entrega rápida na sua porta. Monte o pedido aqui no site e finalize direto no WhatsApp — sem complicação, sem ligação.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="scrollToProducts()">Montar meu pedido ↓</button>
+        <a class="btn btn-ghost" href="https://wa.me/5599992057667?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20%C3%A1gua." target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><b>180+</b>clientes atendidos</div>
+        <div class="meta-item"><b>~30min</b>tempo médio de entrega*</div>
+        <div class="meta-item"><b>R$9</b>a partir de, água avulsa</div>
+      </div>
+    </div>
+
+    <div class="gauge-card">
+      <div class="gauge-top">
+        <div>
+          <div class="gauge-title">Imperatriz agora</div>
+          <div class="gauge-temp">35°C</div>
+        </div>
+        <div class="gauge-title" style="text-align:right;">Risco de<br>desidratação</div>
+      </div>
+      <div class="gauge-body">
+        <div class="tube"><div class="tube-fill"></div></div>
+        <div class="gauge-readout">
+          <div class="lvl">22<span>% restante</span></div>
+          <p>Com esse calor, o galão de casa acaba mais rápido do que parece. Garanta a reposição antes de faltar.</p>
+        </div>
+      </div>
+      <div class="gauge-foot">● Disk Água ativo agora — (99) 99205-7667</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span><b>✓</b> Entrega rápida em Imperatriz</span>
+    <span><b>✓</b> Água adicionada de sais minerais</span>
+    <span><b>✓</b> Revendedor autorizado Cristal Sul</span>
+    <span><b>✓</b> Pedido pelo site, confirmação no WhatsApp</span>
+    <span><b>✓</b> Entrega rápida em Imperatriz</span>
+    <span><b>✓</b> Água adicionada de sais minerais</span>
+    <span><b>✓</b> Revendedor autorizado Cristal Sul</span>
+    <span><b>✓</b> Pedido pelo site, confirmação no WhatsApp</span>
+  </div>
+</div>
+
+<section class="section" id="produtos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Catálogo</span>
+      <h2>Escolha o que falta na sua casa</h2>
+      <p>Preços de revenda autorizada. Ajuste a quantidade e adicione ao pedido — o resumo é montado automaticamente.</p>
+    </div>
+
+    <div class="products">
+
+      <div class="product-card featured">
+        <span class="badge-pop">MAIS PEDIDO · FRETE GRÁTIS</span>
+        <div class="product-visual">🪣</div>
+        <div class="product-name">Galão + Água 20L</div>
+        <p class="product-desc">Galão retornável cheio, pronto pra usar no bebedouro. Ideal pra quem está pedindo pela primeira vez. <strong style="color:var(--good);">Entrega grátis.</strong></p>
+        <div class="product-price-row">
+          <span class="price">R$42</span>
+          <span class="price-unit">/ unidade · frete grátis</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('galao',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-galao">0</span>
+          <button class="qty-btn" onclick="changeQty('galao',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-galao" onclick="addToCart('galao')">Adicionar ao pedido</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual">💧</div>
+        <div class="product-name">Água 20L (refil)</div>
+        <p class="product-desc">Só a água, para quem já tem o galão retornável em casa. Troca rápida na porta.</p>
+        <div class="product-price-row">
+          <span class="price">R$9</span>
+          <span class="price-unit">/ unidade · +R$1 se for entrega</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('refil',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-refil">0</span>
+          <button class="qty-btn" onclick="changeQty('refil',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-refil" onclick="addToCart('refil')">Adicionar ao pedido</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual">📦</div>
+        <div class="product-name">Combo Família (3 galões)</div>
+        <p class="product-desc">Três galões + água, pra quem prefere garantir o mês e evitar pedido recorrente.</p>
+        <div class="product-price-row">
+          <span class="price">R$120</span>
+          <span class="price-old">R$126</span>
+          <span class="price-unit">/ combo</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('combo',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-combo">0</span>
+          <button class="qty-btn" onclick="changeQty('combo',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-combo" onclick="addToCart('combo')">Adicionar ao pedido</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Como funciona</span>
+      <h2>Do clique à porta da sua casa</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num mono">01</div>
+        <h3>Escolha a água</h3>
+        <p>Ajuste as quantidades de cada item no catálogo acima.</p>
+      </div>
+      <div class="step">
+        <div class="step-num mono">02</div>
+        <h3>Confira o resumo</h3>
+        <p>O total e o endereço aparecem prontos no painel de pedido.</p>
+      </div>
+      <div class="step">
+        <div class="step-num mono">03</div>
+        <h3>Envie no WhatsApp</h3>
+        <p>Um clique e o pedido completo chega pronto pra confirmação.</p>
+      </div>
+      <div class="step">
+        <div class="step-num mono">04</div>
+        <h3>Receba em casa</h3>
+        <p>Entrega rápida em Imperatriz, sem precisar ligar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-section section" id="pedido">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Seu pedido</span>
+      <h2>Resumo e finalização</h2>
+      <p>Revise os itens, informe onde entregar e envie — a mensagem chega organizada no nosso WhatsApp.</p>
+    </div>
+
+    <div class="order-grid">
+      <div class="cart-list" id="cart-list">
+        <div class="cart-empty" id="cart-empty">Seu pedido está vazio. Adicione água ou galões no catálogo acima 👆</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Finalizar pedido</h3>
+
+        <div class="field">
+          <label>Como você quer receber?</label>
+          <div class="mode-toggle">
+            <button type="button" class="mode-btn active" id="mode-entregar" onclick="setDeliveryMode('entregar')">🛵 Entregar</button>
+            <button type="button" class="mode-btn" id="mode-retirar" onclick="setDeliveryMode('retirar')">🏠 Retirar no local</button>
+          </div>
+        </div>
+
+        <div class="summary-row"><span>Itens</span><span id="sum-items">0</span></div>
+        <div class="summary-row" id="sum-fee-row" style="display:none;"><span>Taxa de entrega</span><span id="sum-fee">R$ 0,00</span></div>
+        <div class="summary-row total"><span>Total</span><span class="v" id="sum-total">R$ 0,00</span></div>
+
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" placeholder="Como podemos te chamar?">
+        </div>
+        <div class="field" id="endereco-field">
+          <label for="endereco">Endereço de entrega</label>
+          <textarea id="endereco" placeholder="Rua, número, bairro, ponto de referência"></textarea>
+        </div>
+        <div class="field">
+          <label for="horario">Melhor horário</label>
+          <input type="text" id="horario" placeholder="Ex: hoje à tarde, depois das 18h...">
+        </div>
+        <div class="field">
+          <label>Pagamento</label>
+          <div class="radio-pay">
+            <label><input type="radio" name="pay" value="Pix" checked><span>Pix</span></label>
+            <label><input type="radio" name="pay" value="Dinheiro"><span>Dinheiro</span></label>
+          </div>
+        </div>
+
+        <button class="wa-submit" id="submit-btn" onclick="sendOrder()">
+          📲 Enviar pedido no WhatsApp
+        </button>
+        <p class="form-hint">Você será direcionado ao WhatsApp com o pedido já preenchido. Nada é cobrado automaticamente — a confirmação é feita por lá.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">Qual o tempo médio de entrega? <span class="chev">+</span></div>
+        <div class="faq-a">Em horários normais, entregamos em Imperatriz em cerca de 30 a 60 minutos. Em dias de pico, o WhatsApp confirma o horário exato.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">A entrega tem taxa? <span class="chev">+</span></div>
+        <div class="faq-a">O galão + água tem entrega grátis sempre. Já a água avulsa (refil) tem +R$1 por unidade quando é entregue em casa — se você escolher retirar no local, não paga essa taxa. Use o botão "Entregar / Retirar" no resumo do pedido.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Não tenho galão retornável, e agora? <span class="chev">+</span></div>
+        <div class="faq-a">Sem problema — escolha a opção "Galão + Água 20L". Na próxima compra, você já pode pedir só o refil.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais formas de pagamento vocês aceitam? <span class="chev">+</span></div>
+        <div class="faq-a">Aceitamos Pix e dinheiro na entrega. Não trabalhamos com cartão. Escolha sua preferência no resumo do pedido antes de enviar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Atendem empresas e condomínios? <span class="chev">+</span></div>
+        <div class="faq-a">Sim! Para pedidos recorrentes ou em grande volume, fale direto no WhatsApp que montamos uma condição especial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">💧 AQUA VIDA ITZ</div>
+      <div class="foot-links">
+        <a href="https://wa.me/5599992057667" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/aqua_vida_itz" target="_blank" rel="noopener">Instagram</a>
+        <a href="#produtos">Catálogo</a>
+      </div>
+    </div>
+    <p class="foot-fine">Revendedor autorizado Água Cristal Sul · Imperatriz – MA · (99) 99205-7667 · *Tempo de entrega estimado, pode variar conforme demanda e distância.</p>
+  </div>
+</footer>
+
+<button class="float-wa" onclick="sendOrder()">
+  <span class="fc" id="float-count">0</span> 📲 <span class="label">Pedir no WhatsApp</span>
+</button>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toast-text">Adicionado ao pedido</span></div>
+
+<script>
+  const WHATS_NUMBER = "5599992057667"; // +55 99 99205-7667
+  const PRODUCTS = {
+    galao: { name: "Galão + Água 20L", price: 42, icon: "🪣", deliveryFee: 0 },
+    refil: { name: "Água 20L (refil)", price: 9, icon: "💧", deliveryFee: 1 },
+    combo: { name: "Combo Família (3 galões)", price: 120, icon: "📦", deliveryFee: 0 },
+  };
+
+  let qtys = { galao: 0, refil: 0, combo: 0 };
+  let cart = {}; // { key: { name, price, deliveryFee, icon, qty } }
+  let deliveryMode = "entregar"; // "entregar" | "retirar"
+
+  function changeQty(key, delta){
+    qtys[key] = Math.max(0, (qtys[key] || 0) + delta);
+    document.getElementById('qty-' + key).textContent = qtys[key];
+  }
+
+  function addToCart(key){
+    const product = PRODUCTS[key];
+    const qty = qtys[key];
+    if (qty <= 0){
+      showToast("Escolha uma quantidade antes de adicionar", true);
+      return;
+    }
+    if (cart[key]){
+      cart[key].qty += qty;
+    } else {
+      cart[key] = { name: product.name, price: product.price, deliveryFee: product.deliveryFee, icon: product.icon, qty };
+    }
+    qtys[key] = 0;
+    document.getElementById('qty-' + key).textContent = 0;
+
+    const btn = document.getElementById('add-' + key);
+    btn.textContent = "Adicionado ✓";
+    btn.classList.add('in-cart');
+    setTimeout(() => {
+      btn.textContent = "Adicionar ao pedido";
+      btn.classList.remove('in-cart');
+    }, 1200);
+
+    renderCart();
+    showToast(product.name + " adicionado ao pedido");
+  }
+
+  function removeFromCart(key){
+    delete cart[key];
+    renderCart();
+  }
+
+  function setDeliveryMode(mode){
+    deliveryMode = mode;
+    document.getElementById('mode-entregar').classList.toggle('active', mode === 'entregar');
+    document.getElementById('mode-retirar').classList.toggle('active', mode === 'retirar');
+    document.getElementById('endereco-field').style.display = mode === 'entregar' ? 'block' : 'none';
+    renderCart();
+  }
+
+  function unitPrice(item){
+    return item.price + (deliveryMode === 'entregar' ? item.deliveryFee : 0);
+  }
+
+  function renderCart(){
+    const list = document.getElementById('cart-list');
+    const keys = Object.keys(cart);
+
+    if (keys.length === 0){
+      list.innerHTML = '<div class="cart-empty" id="cart-empty">Seu pedido está vazio. Adicione água ou galões no catálogo acima 👆</div>';
+    } else {
+      list.innerHTML = keys.map(key => {
+        const item = cart[key];
+        const u = unitPrice(item);
+        const lineTotal = (u * item.qty).toFixed(2).replace('.', ',');
+        return `
+          <div class="cart-item">
+            <div class="ic">${item.icon}</div>
+            <div class="info">
+              <b>${item.name}</b>
+              <span>${item.qty} × R$${u.toFixed(2).replace('.', ',')}</span>
+            </div>
+            <div class="price-side">
+              <span class="line-total mono">R$${lineTotal}</span>
+              <button class="remove-btn" onclick="removeFromCart('${key}')" aria-label="Remover ${item.name}">✕</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    let totalItems = 0;
+    let totalValue = 0;
+    let deliveryTotal = 0;
+    keys.forEach(k => {
+      const item = cart[k];
+      totalItems += item.qty;
+      totalValue += unitPrice(item) * item.qty;
+      if (deliveryMode === 'entregar') deliveryTotal += item.deliveryFee * item.qty;
+    });
+
+    document.getElementById('sum-items').textContent = totalItems;
+    document.getElementById('sum-total').textContent = "R$ " + totalValue.toFixed(2).replace('.', ',');
+
+    const feeRow = document.getElementById('sum-fee-row');
+    if (deliveryTotal > 0){
+      feeRow.style.display = 'flex';
+      document.getElementById('sum-fee').textContent = "R$ " + deliveryTotal.toFixed(2).replace('.', ',');
+    } else {
+      feeRow.style.display = 'none';
+    }
+
+    document.getElementById('cart-count').textContent = totalItems;
+    document.getElementById('float-count').textContent = totalItems;
+
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.disabled = totalItems === 0;
+  }
+
+  function buildMessage(){
+    const keys = Object.keys(cart);
+    const nome = document.getElementById('nome').value.trim();
+    const endereco = document.getElementById('endereco').value.trim();
+    const horario = document.getElementById('horario').value.trim();
+    const pay = document.querySelector('input[name="pay"]:checked').value;
+
+    let lines = [];
+    lines.push("Olá! Quero fazer um pedido na Aqua Vida Itz 💧");
+    lines.push("");
+    lines.push(`*Modo:* ${deliveryMode === 'entregar' ? 'Entrega' : 'Retirada no local'}`);
+    lines.push("");
+    if (keys.length > 0){
+      lines.push("*Itens:*");
+      let total = 0;
+      keys.forEach(k => {
+        const item = cart[k];
+        const u = unitPrice(item);
+        const lineTotal = u * item.qty;
+        total += lineTotal;
+        lines.push(`• ${item.qty}x ${item.name} — R$${lineTotal.toFixed(2).replace('.', ',')}`);
+      });
+      lines.push("");
+      lines.push(`*Total: R$${total.toFixed(2).replace('.', ',')}*`);
+    } else {
+      lines.push("(quero combinar os itens por aqui mesmo)");
+    }
+    lines.push("");
+    if (nome) lines.push(`*Nome:* ${nome}`);
+    if (deliveryMode === 'entregar' && endereco) lines.push(`*Endereço:* ${endereco}`);
+    if (horario) lines.push(`*Horário preferido:* ${horario}`);
+    lines.push(`*Pagamento:* ${pay}`);
+
+    return lines.join("\n");
+  }
+
+  function sendOrder(){
+    const keys = Object.keys(cart);
+    if (keys.length === 0){
+      showToast("Adicione pelo menos um item antes de enviar", true);
+      document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    const message = buildMessage();
+    const url = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  function showToast(text, isWarning){
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-text').textContent = text;
+    toast.style.borderColor = isWarning ? '#FF6B35' : '#3FCF8E';
+    toast.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  function toggleFaq(el){
+    el.parentElement.classList.toggle('open');
+    el.querySelector('.chev').textContent = el.parentElement.classList.contains('open') ? '−' : '+';
+  }
+
+  function scrollToProducts(){
+    document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+  }
+  function scrollToOrder(){
+    document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>
