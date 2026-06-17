@@ -848,7 +848,7 @@
   function sendOrder(){
     const keys = Object.keys(cart);
     if (keys.length === 0){
-      showToast("Adicione pelo menos um item antes de enviar", true);
+      showToast("Adicione pelo menos um item antes de enviar!", true);
       document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
       return;
     }
