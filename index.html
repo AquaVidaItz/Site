@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqua Vida Itz — Água Cristal Sul em Imperatriz</title>
+<meta name="description" content="Peça água Cristal Sul 20L com entrega rápida em Imperatriz. Monte seu pedido e finalize no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7FBFD;
+    --bg-deep:#EAF4F8;
+    --ink:#0B1F2B;
+    --ink-soft:#4B6373;
+    --ink-faint:#8AA0AC;
+    --petrol:#075C8C;
+    --petrol-deep:#053F60;
+    --cerulean:#0FA9D6;
+    --cerulean-soft:rgba(15,169,214,0.12);
+    --amber:#FFB23E;
+    --amber-deep:#E0901A;
+    --white:#FFFFFF;
+    --line: rgba(11,31,43,0.10);
+    --radius-lg:24px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{ font-family:'Sora', sans-serif; line-height:1.08; margin:0; font-weight:800; letter-spacing:-0.01em; }
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .mono{ font-family:'Space Mono', monospace; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--cerulean);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  /* ================= TOPBAR ================= */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    background:rgba(247,251,253,0.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-icon{ width:36px; height:36px; }
+  .brand-name{ font-family:'Sora'; font-weight:800; font-size:16px; color:var(--ink); }
+  .brand-name span{ color:var(--cerulean); }
+  .topbar-right{ display:flex; align-items:center; gap:16px; }
+  .topbar-loc{ font-size:12.5px; color:var(--ink-soft); display:flex; align-items:center; gap:6px; }
+  .cart-btn{
+    display:flex; align-items:center; gap:8px; background:var(--ink); color:var(--white);
+    padding:10px 16px; border-radius:100px; font-weight:700; font-size:13px; cursor:pointer; border:none;
+  }
+  .cart-btn .count{ background:var(--amber); color:var(--ink); border-radius:50%; width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; }
+
+  /* ================= HERO ================= */
+  .hero{ position:relative; padding:64px 0 0; overflow:hidden; }
+  .wave-bg{ position:absolute; top:0; left:0; width:100%; height:680px; z-index:0; pointer-events:none; }
+  .wave-bg svg{ width:100%; height:100%; }
+
+  .hero-content{ position:relative; z-index:2; }
+  .hero-grid{ display:grid; grid-template-columns: 1fr 0.85fr; gap:40px; align-items:center; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+    color:var(--petrol-deep); background:var(--cerulean-soft); padding:7px 14px; border-radius:100px;
+    margin-bottom:22px; letter-spacing:0.02em;
+  }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--cerulean); animation:pulse 1.8s infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  .hero h1{ font-size:clamp(36px, 4.6vw, 54px); color:var(--ink); }
+  .hero h1 .hl{ color:var(--petrol); position:relative; }
+  .hero-sub{ margin-top:20px; font-size:17px; color:var(--ink-soft); max-width:460px; line-height:1.6; }
+  .hero-actions{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+  .btn{
+    font-family:'Sora'; font-weight:700; font-size:14.5px; padding:15px 26px; border-radius:100px;
+    border:none; cursor:pointer; display:inline-flex; align-items:center; gap:10px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{ transform:scale(0.97); }
+  .btn-primary{ background:var(--petrol); color:var(--white); box-shadow:0 14px 30px -10px rgba(7,92,140,0.5); }
+  .btn-primary:hover{ background:var(--petrol-deep); box-shadow:0 16px 34px -8px rgba(7,92,140,0.6); }
+  .btn-ghost{ background:var(--white); color:var(--ink); border:1.5px solid var(--line); }
+  .btn-ghost:hover{ border-color:var(--cerulean); }
+
+  .hero-stats{ display:flex; gap:30px; margin-top:38px; flex-wrap:wrap; }
+  .hs-item{ font-size:12px; color:var(--ink-faint); }
+  .hs-item b{ display:block; font-family:'Sora'; font-size:24px; color:var(--ink); font-weight:800; }
+
+  /* ---- signature: bottle visual with animated fill ---- */
+  .bottle-stage{ position:relative; display:flex; justify-content:center; align-items:flex-end; height:480px; }
+  .bottle-shadow{
+    position:absolute; bottom:18px; width:200px; height:36px; border-radius:50%;
+    background:radial-gradient(ellipse, rgba(7,92,140,0.22), transparent 70%);
+    z-index:1;
+  }
+  .bottle-svg{ position:relative; z-index:2; width:260px; height:auto; filter:drop-shadow(0 20px 40px rgba(7,92,140,0.25)); }
+  .fill-mask-rect{ animation:fillUp 2.4s ease-out forwards; }
+  @keyframes fillUp{ from{ y:380; height:0; } }
+
+  .float-card{
+    position:absolute; background:var(--white); border-radius:14px; padding:12px 16px;
+    box-shadow:0 14px 30px -8px rgba(11,31,43,0.18); display:flex; align-items:center; gap:10px;
+    font-size:12.5px; font-weight:700; z-index:3;
+  }
+  .float-card.fc1{ top:30px; left:-10px; animation:floatA 4s ease-in-out infinite; }
+  .float-card.fc2{ bottom:80px; right:-16px; animation:floatB 4.5s ease-in-out infinite 0.4s; }
+  @keyframes floatA{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+  @keyframes floatB{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(8px); } }
+  .float-card .ic{ width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; }
+  .fc1 .ic{ background:var(--cerulean-soft); }
+  .fc2 .ic{ background:rgba(255,178,62,0.18); }
+  .float-card .tx span{ display:block; font-size:10px; color:var(--ink-faint); font-weight:600; }
+
+  @media (prefers-reduced-motion: reduce){
+    .fill-mask-rect, .float-card.fc1, .float-card.fc2, .eyebrow .dot{ animation:none; }
+  }
+
+  /* ================= TICKER ================= */
+  .ticker{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--white); padding:16px 0; overflow:hidden; margin-top:56px; position:relative; z-index:2; }
+  .ticker-track{ display:flex; gap:42px; white-space:nowrap; font-size:13px; font-weight:600; color:var(--ink-soft); animation:scroll 24s linear infinite; }
+  .ticker-track span{ display:flex; align-items:center; gap:9px; }
+  .ticker-track b{ color:var(--cerulean); }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation:none; } }
+
+  /* ================= SECTIONS ================= */
+  .section{ padding:78px 0; position:relative; z-index:2; }
+  .section-head{ margin-bottom:40px; max-width:600px; }
+  .section-tag{ font-size:12.5px; font-weight:700; color:var(--cerulean); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; display:block; }
+  .section h2{ font-size:clamp(28px, 3.4vw, 38px); color:var(--ink); }
+  .section-head p{ margin-top:14px; color:var(--ink-soft); font-size:16px; line-height:1.6; }
+
+  /* ================= PRODUCT CARDS ================= */
+  .products{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+  .product-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:26px; display:flex; flex-direction:column; gap:16px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .product-card:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -16px rgba(11,31,43,0.16); }
+  .product-card.featured{ border:2px solid var(--cerulean); position:relative; }
+  .badge-pop{
+    position:absolute; top:-13px; left:24px; background:var(--amber); color:var(--ink);
+    font-family:'Sora'; font-size:11px; font-weight:800; padding:5px 13px; border-radius:100px;
+  }
+  .product-visual{
+    height:150px; border-radius:var(--radius-md); background:linear-gradient(160deg, var(--bg-deep), #DCEEF4);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .product-visual svg{ height:120px; }
+  .product-name{ font-family:'Sora'; font-weight:700; font-size:18px; color:var(--ink); }
+  .product-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.5; }
+  .product-tag{
+    display:inline-flex; align-self:flex-start; font-size:10.5px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.04em; color:var(--petrol); background:var(--cerulean-soft); padding:4px 10px; border-radius:100px;
+  }
+  .product-tag.neutral{ color:var(--ink-faint); background:var(--bg-deep); }
+  .product-price-row{ display:flex; align-items:baseline; gap:7px; margin-top:auto; }
+  .price{ font-family:'Space Mono'; font-weight:700; font-size:26px; color:var(--ink); }
+  .price-unit{ font-size:12px; color:var(--ink-faint); }
+
+  .qty-row{ display:flex; align-items:center; justify-content:space-between; background:var(--bg-deep); border-radius:100px; padding:5px; }
+  .qty-btn{ width:34px; height:34px; border-radius:50%; border:none; background:var(--white); color:var(--ink); font-size:18px; font-weight:700; cursor:pointer; transition:background .15s ease; box-shadow:0 2px 6px rgba(11,31,43,0.1); }
+  .qty-btn:hover{ background:var(--petrol); color:var(--white); }
+  .qty-val{ font-family:'Space Mono'; font-size:15px; font-weight:700; min-width:26px; text-align:center; }
+  .add-btn{
+    width:100%; padding:13px; border-radius:100px; border:none; cursor:pointer;
+    background:var(--petrol); color:var(--white); font-weight:700; font-size:14px; font-family:'Sora';
+    transition:background .15s ease, transform .15s ease;
+  }
+  .add-btn:hover{ background:var(--petrol-deep); }
+  .add-btn:active{ transform:scale(0.97); }
+  .add-btn.in-cart{ background:#1B9E6B; }
+
+  /* ================= HOW IT WORKS ================= */
+  .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .step{ background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:24px; }
+  .step-icon{
+    width:42px; height:42px; border-radius:12px; background:var(--cerulean-soft); display:flex;
+    align-items:center; justify-content:center; font-size:19px; margin-bottom:16px;
+  }
+  .step h3{ font-family:'Sora'; font-weight:700; font-size:15.5px; color:var(--ink); margin-bottom:8px; }
+  .step p{ font-size:13px; color:var(--ink-soft); line-height:1.5; }
+
+  /* ================= ORDER SECTION ================= */
+  .order-section{ background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .order-grid{ display:grid; grid-template-columns: 1fr 380px; gap:30px; align-items:start; }
+
+  .cart-list{ background:var(--bg-deep); border-radius:var(--radius-lg); padding:8px; min-height:150px; }
+  .cart-empty{ padding:50px 20px; text-align:center; color:var(--ink-faint); font-size:14px; }
+  .cart-item{ display:flex; align-items:center; gap:14px; padding:16px; background:var(--white); border-radius:14px; margin:6px; }
+  .cart-item .ic{ width:44px; height:44px; border-radius:12px; background:var(--cerulean-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .cart-item .ic svg{ height:30px; }
+  .cart-item .info{ flex:1; }
+  .cart-item .info b{ display:block; font-size:14.5px; color:var(--ink); font-family:'Sora'; }
+  .cart-item .info span{ font-size:12px; color:var(--ink-faint); }
+  .cart-item .price-side{ display:flex; align-items:center; gap:14px; }
+  .cart-item .line-total{ font-family:'Space Mono'; font-size:14.5px; font-weight:700; min-width:68px; text-align:right; }
+  .remove-btn{ background:var(--bg-deep); border:none; color:var(--ink-faint); cursor:pointer; font-size:15px; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .remove-btn:hover{ color:#D6463A; background:rgba(214,70,58,0.1); }
+
+  .summary-card{ background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:26px; position:sticky; top:90px; }
+  .summary-card h3{ font-family:'Sora'; font-weight:700; font-size:17px; color:var(--ink); margin-bottom:18px; }
+
+  .mode-toggle{ display:flex; background:var(--bg-deep); border-radius:100px; padding:4px; margin-bottom:18px; }
+  .mode-btn{
+    flex:1; padding:11px 8px; border:none; background:transparent; color:var(--ink-soft);
+    font-family:'Sora'; font-weight:700; font-size:12.5px; cursor:pointer; border-radius:100px; transition:all .15s ease;
+  }
+  .mode-btn.active{ background:var(--petrol); color:var(--white); }
+
+  .summary-row{ display:flex; justify-content:space-between; font-size:13.5px; color:var(--ink-soft); padding:10px 0; border-bottom:1px solid var(--line); }
+  .summary-row.total{ border-bottom:none; padding-top:16px; font-size:19px; font-weight:800; color:var(--ink); font-family:'Sora'; }
+  .summary-row.total .v{ font-family:'Space Mono'; color:var(--petrol); }
+
+  .field{ margin-top:16px; }
+  .field label{ display:block; font-size:12px; color:var(--ink-faint); margin-bottom:7px; font-weight:600; }
+  .field input, .field textarea{
+    width:100%; background:var(--bg-deep); border:1.5px solid transparent; border-radius:var(--radius-sm);
+    padding:12px 14px; color:var(--ink); font-family:'Inter'; font-size:14px; transition:border-color .15s ease;
+  }
+  .field textarea{ resize:vertical; min-height:60px; }
+  .field input::placeholder, .field textarea::placeholder{ color:var(--ink-faint); }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--cerulean); background:var(--white); }
+
+  .radio-pay{ display:flex; gap:10px; }
+  .radio-pay label{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
+    background:var(--bg-deep); border-radius:var(--radius-sm); padding:11px 10px; font-size:13px; color:var(--ink-soft); font-weight:600;
+  }
+  .radio-pay input{ width:auto; accent-color:var(--petrol); }
+  .radio-pay input:checked + span{ color:var(--ink); font-weight:700; }
+
+  .wa-submit{
+    width:100%; margin-top:22px; padding:17px; border-radius:100px; border:none; cursor:pointer;
+    background:#25D366; color:#06210f; font-weight:800; font-size:15.5px; font-family:'Sora';
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 14px 30px -10px rgba(37,211,102,0.5);
+  }
+  .wa-submit:hover{ transform:translateY(-2px); box-shadow:0 18px 36px -8px rgba(37,211,102,0.6); }
+  .wa-submit:disabled{ opacity:0.4; cursor:not-allowed; transform:none; box-shadow:none; }
+  .form-hint{ font-size:11.5px; color:var(--ink-faint); margin-top:12px; text-align:center; line-height:1.5; }
+
+  /* ================= FAQ ================= */
+  .faq-item{ border-bottom:1px solid var(--line); padding:20px 0; }
+  .faq-q{ display:flex; justify-content:space-between; align-items:center; cursor:pointer; gap:16px; font-weight:700; font-size:15.5px; color:var(--ink); font-family:'Sora'; }
+  .faq-q .chev{ transition:transform .2s ease; color:var(--cerulean); font-size:20px; flex-shrink:0; }
+  .faq-item.open .chev{ transform:rotate(45deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:14px; color:var(--ink-soft); line-height:1.6; }
+  .faq-item.open .faq-a{ max-height:200px; padding-top:13px; }
+
+  /* ================= FOOTER ================= */
+  footer{ border-top:1px solid var(--line); padding:40px 0; }
+  .foot-grid{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .foot-brand{ display:flex; align-items:center; gap:10px; font-family:'Sora'; font-weight:800; font-size:15px; }
+  .foot-links{ display:flex; gap:22px; font-size:13px; color:var(--ink-soft); }
+  .foot-fine{ margin-top:24px; font-size:12px; color:var(--ink-faint); text-align:center; }
+
+  /* ================= FLOATING WHATSAPP ================= */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:60; background:#25D366; color:#06210f; border:none;
+    border-radius:100px; padding:15px 22px; font-weight:800; font-size:14px; font-family:'Sora'; cursor:pointer;
+    display:flex; align-items:center; gap:10px; box-shadow:0 16px 34px -8px rgba(37,211,102,0.55);
+    transition:transform .15s ease;
+  }
+  .float-wa:hover{ transform:scale(1.04); }
+  .float-wa .fc{ background:var(--amber); color:var(--ink); font-size:11px; font-weight:800; border-radius:50%; width:20px; height:20px; display:flex; align-items:center; justify-content:center; }
+  @media (max-width:880px){ .float-wa span.label{ display:none; } }
+
+  .toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--ink);
+    color:var(--white); padding:13px 22px; border-radius:100px; font-size:13.5px; font-weight:600;
+    opacity:0; pointer-events:none; transition:all .25s ease; z-index:70;
+    display:flex; align-items:center; gap:10px; white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast .dot{ width:8px; height:8px; border-radius:50%; background:var(--cerulean); }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .bottle-stage{ height:360px; margin-top:20px; }
+    .products{ grid-template-columns:repeat(2,1fr); }
+    .steps{ grid-template-columns:repeat(2,1fr); }
+    .order-grid{ grid-template-columns:1fr; }
+    .summary-card{ position:static; }
+  }
+  @media (max-width:620px){
+    .products{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .hero-stats{ gap:20px; }
+    .section{ padding:54px 0; }
+    .hero{ padding:40px 0 0; }
+    .topbar-loc{ display:none; }
+  }
+  /* ================= ADMIN OVERLAY / LOGIN / PANEL ================= */
+  .admin-overlay{
+    display:none; position:fixed; inset:0; z-index:200;
+    background:rgba(11,31,43,0.72); backdrop-filter:blur(6px);
+    align-items:center; justify-content:center; padding:20px;
+  }
+  .admin-overlay.show{ display:flex; }
+
+  .admin-login-box{
+    background:var(--white); border-radius:var(--radius-lg); padding:32px 28px;
+    width:100%; max-width:360px; position:relative; box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+  .admin-close{
+    position:absolute; top:14px; right:14px; background:var(--bg-deep); border:none; border-radius:50%;
+    width:30px; height:30px; cursor:pointer; font-size:14px; color:var(--ink-soft);
+  }
+  .admin-login-head{ text-align:center; margin-bottom:22px; }
+  .admin-login-icon{ font-size:28px; margin-bottom:10px; }
+  .admin-login-head h3{ font-family:'Sora'; font-size:18px; font-weight:800; color:var(--ink); }
+  .admin-login-head p{ margin-top:6px; font-size:13px; color:var(--ink-faint); }
+  .admin-login-error{
+    display:none; color:#D6463A; font-size:12.5px; font-weight:600; margin-top:10px; text-align:center;
+  }
+  .admin-login-error.show{ display:block; }
+  .admin-login-btn{
+    width:100%; margin-top:20px; padding:14px; border-radius:100px; border:none; cursor:pointer;
+    background:var(--petrol); color:var(--white); font-weight:700; font-size:14.5px; font-family:'Sora';
+  }
+  .admin-login-btn:hover{ background:var(--petrol-deep); }
+
+  .admin-panel-box{
+    background:var(--bg); border-radius:var(--radius-lg); padding:0; width:100%; max-width:840px;
+    max-height:85vh; display:flex; flex-direction:column; overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+  .admin-panel-head{
+    display:flex; justify-content:space-between; align-items:flex-start; padding:24px 26px;
+    border-bottom:1px solid var(--line); background:var(--white); gap:16px; flex-wrap:wrap;
+  }
+  .admin-panel-head h3{ font-family:'Sora'; font-size:19px; font-weight:800; color:var(--ink); }
+  .admin-panel-head p{ font-size:12.5px; color:var(--ink-faint); margin-top:4px; }
+  .admin-panel-actions{ display:flex; gap:10px; }
+  .admin-refresh-btn, .admin-logout-btn{
+    padding:9px 16px; border-radius:100px; border:none; cursor:pointer; font-weight:700; font-size:12.5px; font-family:'Sora';
+  }
+  .admin-refresh-btn{ background:var(--cerulean-soft); color:var(--petrol); }
+  .admin-refresh-btn:hover{ background:var(--cerulean); color:var(--white); }
+  .admin-logout-btn{ background:var(--bg-deep); color:var(--ink-soft); }
+  .admin-logout-btn:hover{ background:#F0DCDA; color:#D6463A; }
+
+  .admin-orders-list{ overflow-y:auto; padding:18px 26px 26px; flex:1; }
+  .admin-orders-empty{ text-align:center; padding:60px 20px; color:var(--ink-faint); font-size:14px; }
+
+  .admin-day-group{ margin-bottom:22px; }
+  .admin-day-label{
+    font-family:'Space Mono'; font-size:12px; font-weight:700; color:var(--petrol);
+    text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px; padding-bottom:8px;
+    border-bottom:2px solid var(--line);
+  }
+  .admin-order-card{
+    background:var(--white); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:10px;
+  }
+  .admin-order-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px; }
+  .admin-order-time{ font-family:'Space Mono'; font-size:12px; color:var(--ink-faint); }
+  .admin-order-total{ font-family:'Space Mono'; font-weight:700; font-size:15px; color:var(--petrol); }
+  .admin-order-name{ font-family:'Sora'; font-weight:700; font-size:14.5px; color:var(--ink); }
+  .admin-order-detail{ font-size:12.5px; color:var(--ink-soft); margin-top:3px; line-height:1.5; }
+  .admin-order-items{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); font-size:12.5px; color:var(--ink-soft); }
+  .admin-order-items div{ padding:2px 0; }
+  .admin-order-tags{ display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
+  .admin-order-tag{
+    font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:100px; text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .admin-order-tag.mode{ background:var(--cerulean-soft); color:var(--petrol); }
+  .admin-order-tag.pay{ background:rgba(255,178,62,0.18); color:var(--amber-deep); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 36 36"><circle cx="18" cy="18" r="17" fill="#0FA9D6" opacity="0.12"/><path d="M18 7 C18 7 10 17 10 23 a8 8 0 0 0 16 0 C26 17 18 7 18 7 Z" fill="#0FA9D6"/></svg>
+      <div class="brand-name">Aqua Vida <span>Itz</span></div>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-loc">📍 Imperatriz – MA</span>
+      <button class="cart-btn" onclick="scrollToOrder()">Pedido <span class="count" id="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wave-bg">
+    <svg viewBox="0 0 1440 680" preserveAspectRatio="none">
+      <path id="wave1" fill="#0FA9D6" opacity="0.07">
+        <animate attributeName="d" dur="9s" repeatCount="indefinite"
+          values="M0,180 C360,260 1080,100 1440,180 L1440,0 L0,0 Z;
+                   M0,140 C360,80 1080,260 1440,140 L1440,0 L0,0 Z;
+                   M0,180 C360,260 1080,100 1440,180 L1440,0 L0,0 Z"/>
+      </path>
+      <path id="wave2" fill="#075C8C" opacity="0.05">
+        <animate attributeName="d" dur="12s" repeatCount="indefinite"
+          values="M0,260 C480,340 960,180 1440,260 L1440,0 L0,0 Z;
+                   M0,220 C480,150 960,330 1440,220 L1440,0 L0,0 Z;
+                   M0,260 C480,340 960,180 1440,260 L1440,0 L0,0 Z"/>
+      </path>
+    </svg>
+  </div>
+
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Entrega hoje em Imperatriz</div>
+        <h1>Água de qualidade,<br>direto na <span class="hl">sua porta</span>.</h1>
+        <p class="hero-sub">Galões Cristal Sul 20L com entrega rápida em Imperatriz. Monte o pedido aqui no site e finalize no WhatsApp — sem ligação, sem complicação.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToProducts()">Montar meu pedido</button>
+          <a class="btn btn-ghost" href="https://wa.me/5599992057667?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20%C3%A1gua." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hs-item"><b>180+</b>clientes atendidos</div>
+          <div class="hs-item"><b>~30min</b>tempo médio de entrega</div>
+          <div class="hs-item"><b>R$9</b>a partir de, água avulsa</div>
+        </div>
+      </div>
+
+      <div class="bottle-stage">
+        <div class="float-card fc1">
+          <div class="ic">🚚</div>
+          <div class="tx">Chega em casa<span>~30 minutos</span></div>
+        </div>
+        <div class="float-card fc2">
+          <div class="ic">✓</div>
+          <div class="tx">Revenda autorizada<span>Cristal Sul</span></div>
+        </div>
+        <div class="bottle-shadow"></div>
+        <svg class="bottle-svg" viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bottleBody" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#BCE6F4"/>
+              <stop offset="35%" stop-color="#6FC4E6"/>
+              <stop offset="65%" stop-color="#3AA3D1"/>
+              <stop offset="100%" stop-color="#2786B5"/>
+            </linearGradient>
+            <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1C5C82"/>
+              <stop offset="50%" stop-color="#0F4566"/>
+              <stop offset="100%" stop-color="#0B3650"/>
+            </linearGradient>
+            <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+            <clipPath id="bodyClip">
+              <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z"/>
+            </clipPath>
+          </defs>
+
+          <rect x="118" y="18" width="44" height="14" rx="3" fill="url(#capGrad)"/>
+          <rect x="112" y="30" width="56" height="10" rx="2" fill="#0B3650"/>
+          <path d="M 122 40 L 122 70 Q 122 78 130 80 L 150 80 Q 158 78 158 70 L 158 40 Z" fill="url(#bottleBody)" stroke="#1C6E94" stroke-width="1.5"/>
+
+          <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z"
+                fill="url(#bottleBody)" stroke="#1C6E94" stroke-width="2"/>
+
+          <g clip-path="url(#bodyClip)">
+            <rect class="fill-mask-rect" x="55" y="380" width="170" height="0" fill="#1C8FC2" opacity="0.35"/>
+          </g>
+
+          <g stroke="#1C6E94" stroke-width="1.4" opacity="0.5" fill="none">
+            <path d="M 63 210 Q 140 222 217 210"/>
+            <path d="M 61 250 Q 140 263 219 250"/>
+            <path d="M 61 290 Q 140 303 219 290"/>
+            <path d="M 62 330 Q 140 342 218 330"/>
+          </g>
+
+          <path d="M 78 130 Q 70 200 72 320 Q 72 350 85 365" fill="none" stroke="url(#shine)" stroke-width="16" stroke-linecap="round" opacity="0.8"/>
+
+          <path d="M 68 235 Q 140 222 212 235 L 212 305 Q 140 318 68 305 Z" fill="#FFFFFF" stroke="#dfe7ea" stroke-width="1"/>
+          <text x="140" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="17" fill="#0B3650" letter-spacing="0.5">CRISTAL SUL</text>
+          <text x="140" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5C6B72">Água Adicionada de Sais</text>
+          <text x="140" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="12" fill="#0FA9D6">20L</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="wrap" style="padding:0;">
+    <div class="ticker-track">
+      <span><b>✓</b> Entrega rápida em Imperatriz</span>
+      <span><b>✓</b> Água adicionada de sais minerais</span>
+      <span><b>✓</b> Revendedor autorizado Cristal Sul</span>
+      <span><b>✓</b> Pedido confirmado no WhatsApp</span>
+      <span><b>✓</b> Entrega rápida em Imperatriz</span>
+      <span><b>✓</b> Água adicionada de sais minerais</span>
+      <span><b>✓</b> Revendedor autorizado Cristal Sul</span>
+      <span><b>✓</b> Pedido confirmado no WhatsApp</span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="produtos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Catálogo</span>
+      <h2>Escolha o que falta na sua casa</h2>
+      <p>Preços de revenda autorizada. Ajuste a quantidade e adicione ao pedido — o resumo é montado automaticamente.</p>
+    </div>
+
+    <div class="products">
+
+      <div class="product-card featured">
+        <span class="badge-pop">MAIS PEDIDO</span>
+        <div class="product-visual">
+          <svg viewBox="0 0 280 420"><use href="#bottleIconFull"/></svg>
+        </div>
+        <div class="product-name">Galão + Água 20L</div>
+        <p class="product-desc">Galão retornável cheio, pronto pra usar no bebedouro. Ideal pra quem está pedindo pela primeira vez.</p>
+        <span class="product-tag">Entrega grátis</span>
+        <div class="product-price-row">
+          <span class="price">R$42</span>
+          <span class="price-unit">/ unidade</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('galao',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-galao">0</span>
+          <button class="qty-btn" onclick="changeQty('galao',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-galao" onclick="addToCart('galao')">Adicionar ao pedido</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual">
+          <svg viewBox="0 0 280 420"><use href="#bottleIconFull"/></svg>
+        </div>
+        <div class="product-name">Água 20L (refil)</div>
+        <p class="product-desc">Só a água, para quem já tem o galão retornável em casa. Troca rápida na porta.</p>
+        <span class="product-tag neutral">+R$1 se for entrega</span>
+        <div class="product-price-row">
+          <span class="price">R$9</span>
+          <span class="price-unit">/ unidade</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('refil',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-refil">0</span>
+          <button class="qty-btn" onclick="changeQty('refil',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-refil" onclick="addToCart('refil')">Adicionar ao pedido</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual">
+          <svg viewBox="0 0 280 420"><use href="#bottleIconTrio"/></svg>
+        </div>
+        <div class="product-name">Combo Família (3 galões)</div>
+        <p class="product-desc">Três galões + água, pra quem prefere garantir o mês e evitar pedido recorrente.</p>
+        <span class="product-tag">Entrega grátis</span>
+        <div class="product-price-row">
+          <span class="price">R$120</span>
+          <span class="price-unit">/ combo</span>
+        </div>
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('combo',-1)" aria-label="Diminuir quantidade">−</button>
+          <span class="qty-val" id="qty-combo">0</span>
+          <button class="qty-btn" onclick="changeQty('combo',1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button class="add-btn" id="add-combo" onclick="addToCart('combo')">Adicionar ao pedido</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- hidden defs reused by product icons -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <g id="bottleIconFull">
+      <rect x="118" y="18" width="44" height="14" rx="3" fill="#0B3650"/>
+      <path d="M 122 40 L 122 70 Q 122 78 130 80 L 150 80 Q 158 78 158 70 L 158 40 Z" fill="#3AA3D1" stroke="#1C6E94" stroke-width="1.5"/>
+      <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z" fill="#3AA3D1" stroke="#1C6E94" stroke-width="2"/>
+      <g stroke="#1C6E94" stroke-width="1.4" opacity="0.5" fill="none">
+        <path d="M 63 210 Q 140 222 217 210"/>
+        <path d="M 61 250 Q 140 263 219 250"/>
+        <path d="M 61 290 Q 140 303 219 290"/>
+      </g>
+      <path d="M 68 235 Q 140 222 212 235 L 212 290 Q 140 303 68 290 Z" fill="#FFFFFF"/>
+      <text x="140" y="266" text-anchor="middle" font-family="Arial" font-weight="800" font-size="20" fill="#0B3650">CRISTAL SUL</text>
+    </g>
+    <g id="bottleIconTrio">
+      <g transform="translate(-58,30) scale(0.78)">
+        <rect x="118" y="18" width="44" height="14" rx="3" fill="#0B3650"/>
+        <path d="M 122 40 L 122 70 Q 122 78 130 80 L 150 80 Q 158 78 158 70 L 158 40 Z" fill="#9FD8EE" stroke="#1C6E94" stroke-width="1.5"/>
+        <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z" fill="#9FD8EE" stroke="#1C6E94" stroke-width="2"/>
+      </g>
+      <g transform="translate(38,0)">
+        <rect x="118" y="18" width="44" height="14" rx="3" fill="#0B3650"/>
+        <path d="M 122 40 L 122 70 Q 122 78 130 80 L 150 80 Q 158 78 158 70 L 158 40 Z" fill="#3AA3D1" stroke="#1C6E94" stroke-width="1.5"/>
+        <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z" fill="#3AA3D1" stroke="#1C6E94" stroke-width="2"/>
+        <path d="M 68 235 Q 140 222 212 235 L 212 290 Q 140 303 68 290 Z" fill="#FFFFFF"/>
+        <text x="140" y="266" text-anchor="middle" font-family="Arial" font-weight="800" font-size="18" fill="#0B3650">x3</text>
+      </g>
+      <g transform="translate(140,30) scale(0.78)">
+        <rect x="118" y="18" width="44" height="14" rx="3" fill="#0B3650"/>
+        <path d="M 122 40 L 122 70 Q 122 78 130 80 L 150 80 Q 158 78 158 70 L 158 40 Z" fill="#6FC4E6" stroke="#1C6E94" stroke-width="1.5"/>
+        <path d="M 122 70 Q 100 88 80 120 Q 62 150 60 190 L 60 340 Q 60 365 85 372 Q 140 384 195 372 Q 220 365 220 340 L 220 190 Q 218 150 200 120 Q 180 88 158 70 Z" fill="#6FC4E6" stroke="#1C6E94" stroke-width="2"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Como funciona</span>
+      <h2>Do clique à porta da sua casa</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-icon">🛒</div><h3>Escolha a água</h3><p>Ajuste as quantidades de cada item no catálogo acima.</p></div>
+      <div class="step"><div class="step-icon">🧾</div><h3>Confira o resumo</h3><p>O total e o endereço aparecem prontos no painel de pedido.</p></div>
+      <div class="step"><div class="step-icon">💬</div><h3>Envie no WhatsApp</h3><p>Um clique e o pedido completo chega pronto pra confirmação.</p></div>
+      <div class="step"><div class="step-icon">🚚</div><h3>Receba em casa</h3><p>Entrega rápida em Imperatriz, sem precisar ligar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="order-section section" id="pedido">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Seu pedido</span>
+      <h2>Resumo e finalização</h2>
+      <p>Revise os itens, informe onde entregar e envie — a mensagem chega organizada no nosso WhatsApp.</p>
+    </div>
+
+    <div class="order-grid">
+      <div class="cart-list" id="cart-list">
+        <div class="cart-empty" id="cart-empty">Seu pedido está vazio. Adicione água ou galões no catálogo acima 👆</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Finalizar pedido</h3>
+
+        <div class="field" style="margin-top:0;">
+          <label>Como você quer receber?</label>
+          <div class="mode-toggle">
+            <button type="button" class="mode-btn active" id="mode-entregar" onclick="setDeliveryMode('entregar')">Entregar</button>
+            <button type="button" class="mode-btn" id="mode-retirar" onclick="setDeliveryMode('retirar')">Retirar</button>
+          </div>
+        </div>
+
+        <div class="summary-row"><span>Itens</span><span id="sum-items">0</span></div>
+        <div class="summary-row" id="sum-fee-row" style="display:none;"><span>Taxa de entrega</span><span id="sum-fee">R$ 0,00</span></div>
+        <div class="summary-row total"><span>Total</span><span class="v" id="sum-total">R$ 0,00</span></div>
+
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" placeholder="Como podemos te chamar?">
+        </div>
+        <div class="field" id="endereco-field">
+          <label for="endereco">Endereço de entrega</label>
+          <textarea id="endereco" placeholder="Rua, número, bairro, ponto de referência"></textarea>
+        </div>
+        <div class="field">
+          <label for="horario">Melhor horário</label>
+          <input type="text" id="horario" placeholder="Ex: hoje à tarde, depois das 18h...">
+        </div>
+        <div class="field">
+          <label>Pagamento</label>
+          <div class="radio-pay">
+            <label><input type="radio" name="pay" value="Pix" checked><span>Pix</span></label>
+            <label><input type="radio" name="pay" value="Dinheiro"><span>Dinheiro</span></label>
+          </div>
+        </div>
+
+        <button class="wa-submit" id="submit-btn" onclick="sendOrder()">
+          📲 Enviar pedido no WhatsApp
+        </button>
+        <p class="form-hint">Você será direcionado ao WhatsApp com o pedido já preenchido. A confirmação é feita por lá.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">Qual o tempo médio de entrega? <span class="chev">+</span></div>
+        <div class="faq-a">Em horários normais, entregamos em Imperatriz em cerca de 30 a 60 minutos. Em dias de pico, o WhatsApp confirma o horário exato.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">A entrega tem taxa? <span class="chev">+</span></div>
+        <div class="faq-a">O galão + água tem entrega grátis sempre. A água avulsa (refil) tem +R$1 por unidade quando entregue em casa — escolhendo retirar, essa taxa não entra.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Não tenho galão retornável, e agora? <span class="chev">+</span></div>
+        <div class="faq-a">Sem problema — escolha "Galão + Água 20L". Na próxima compra, você já pode pedir só o refil.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais formas de pagamento vocês aceitam? <span class="chev">+</span></div>
+        <div class="faq-a">Aceitamos Pix e dinheiro na entrega. Não trabalhamos com cartão.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Atendem empresas e condomínios? <span class="chev">+</span></div>
+        <div class="faq-a">Sim! Para pedidos recorrentes ou em grande volume, fale direto no WhatsApp que montamos uma condição especial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><span id="secret-trigger" onclick="handleSecretClick()" style="cursor:default;">💧</span> Aqua Vida Itz</div>
+      <div class="foot-links">
+        <a href="https://wa.me/5599992057667" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/aqua_vida_itz" target="_blank" rel="noopener">Instagram</a>
+        <a href="#produtos">Catálogo</a>
+      </div>
+    </div>
+    <p class="foot-fine">Revendedor autorizado Água Cristal Sul · Imperatriz – MA · (99) 99205-7667 · Tempo de entrega estimado, pode variar conforme demanda e distância.</p>
+  </div>
+</footer>
+
+<button class="float-wa" onclick="sendOrder()">
+  <span class="fc" id="float-count">0</span> 📲 <span class="label">Pedir no WhatsApp</span>
+</button>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toast-text">Adicionado ao pedido</span></div>
+
+<!-- ============ ADMIN LOGIN MODAL ============ -->
+<div class="admin-overlay" id="admin-login-overlay">
+  <div class="admin-login-box">
+    <button class="admin-close" onclick="closeAdminLogin()" aria-label="Fechar">✕</button>
+    <div class="admin-login-head">
+      <div class="admin-login-icon">🔒</div>
+      <h3>Painel administrativo</h3>
+      <p>Acesso restrito. Informe usuário e senha.</p>
+    </div>
+    <div class="field">
+      <label for="admin-user">Usuário</label>
+      <input type="text" id="admin-user" autocomplete="off" placeholder="Usuário">
+    </div>
+    <div class="field">
+      <label for="admin-pass">Senha</label>
+      <input type="password" id="admin-pass" autocomplete="off" placeholder="Senha">
+    </div>
+    <p class="admin-login-error" id="admin-login-error">Usuário ou senha incorretos.</p>
+    <button class="admin-login-btn" onclick="tryAdminLogin()">Entrar</button>
+  </div>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div class="admin-overlay" id="admin-panel-overlay">
+  <div class="admin-panel-box">
+    <div class="admin-panel-head">
+      <div>
+        <h3>Pedidos recebidos</h3>
+        <p id="admin-panel-sub">Carregando...</p>
+      </div>
+      <div class="admin-panel-actions">
+        <button class="admin-refresh-btn" onclick="loadAdminOrders()">↻ Atualizar</button>
+        <button class="admin-logout-btn" onclick="closeAdminPanel()">Sair</button>
+      </div>
+    </div>
+    <div class="admin-orders-list" id="admin-orders-list">
+      <div class="admin-orders-empty">Carregando pedidos...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const WHATS_NUMBER = "5599992057667";
+  const PRODUCTS = {
+    galao: { name: "Galão + Água 20L", price: 42, deliveryFee: 0 },
+    refil: { name: "Água 20L (refil)", price: 9, deliveryFee: 1 },
+    combo: { name: "Combo Família (3 galões)", price: 120, deliveryFee: 0 },
+  };
+  const ICON_REF = { galao: "#bottleIconFull", refil: "#bottleIconFull", combo: "#bottleIconTrio" };
+
+  let qtys = { galao: 0, refil: 0, combo: 0 };
+  let cart = {};
+  let deliveryMode = "entregar";
+
+  function changeQty(key, delta){
+    qtys[key] = Math.max(0, (qtys[key] || 0) + delta);
+    document.getElementById('qty-' + key).textContent = qtys[key];
+  }
+
+  function addToCart(key){
+    const product = PRODUCTS[key];
+    const qty = qtys[key];
+    if (qty <= 0){
+      showToast("Escolha uma quantidade antes de adicionar", true);
+      return;
+    }
+    if (cart[key]){
+      cart[key].qty += qty;
+    } else {
+      cart[key] = { name: product.name, price: product.price, deliveryFee: product.deliveryFee, qty };
+    }
+    qtys[key] = 0;
+    document.getElementById('qty-' + key).textContent = 0;
+
+    const btn = document.getElementById('add-' + key);
+    btn.textContent = "Adicionado ✓";
+    btn.classList.add('in-cart');
+    setTimeout(() => {
+      btn.textContent = "Adicionar ao pedido";
+      btn.classList.remove('in-cart');
+    }, 1200);
+
+    renderCart();
+    showToast(product.name + " adicionado ao pedido");
+  }
+
+  function removeFromCart(key){
+    delete cart[key];
+    renderCart();
+  }
+
+  function setDeliveryMode(mode){
+    deliveryMode = mode;
+    document.getElementById('mode-entregar').classList.toggle('active', mode === 'entregar');
+    document.getElementById('mode-retirar').classList.toggle('active', mode === 'retirar');
+    document.getElementById('endereco-field').style.display = mode === 'entregar' ? 'block' : 'none';
+    renderCart();
+  }
+
+  function unitPrice(item){
+    return item.price + (deliveryMode === 'entregar' ? item.deliveryFee : 0);
+  }
+
+  function renderCart(){
+    const list = document.getElementById('cart-list');
+    const keys = Object.keys(cart);
+
+    if (keys.length === 0){
+      list.innerHTML = '<div class="cart-empty" id="cart-empty">Seu pedido está vazio. Adicione água ou galões no catálogo acima 👆</div>';
+    } else {
+      list.innerHTML = keys.map(key => {
+        const item = cart[key];
+        const u = unitPrice(item);
+        const lineTotal = (u * item.qty).toFixed(2).replace('.', ',');
+        return `
+          <div class="cart-item">
+            <div class="ic"><svg viewBox="0 0 280 420"><use href="${ICON_REF[key]}"/></svg></div>
+            <div class="info">
+              <b>${item.name}</b>
+              <span>${item.qty} × R$${u.toFixed(2).replace('.', ',')}</span>
+            </div>
+            <div class="price-side">
+              <span class="line-total mono">R$${lineTotal}</span>
+              <button class="remove-btn" onclick="removeFromCart('${key}')" aria-label="Remover ${item.name}">✕</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    let totalItems = 0;
+    let totalValue = 0;
+    let deliveryTotal = 0;
+    keys.forEach(k => {
+      const item = cart[k];
+      totalItems += item.qty;
+      totalValue += unitPrice(item) * item.qty;
+      if (deliveryMode === 'entregar') deliveryTotal += item.deliveryFee * item.qty;
+    });
+
+    document.getElementById('sum-items').textContent = totalItems;
+    document.getElementById('sum-total').textContent = "R$ " + totalValue.toFixed(2).replace('.', ',');
+
+    const feeRow = document.getElementById('sum-fee-row');
+    if (deliveryTotal > 0){
+      feeRow.style.display = 'flex';
+      document.getElementById('sum-fee').textContent = "R$ " + deliveryTotal.toFixed(2).replace('.', ',');
+    } else {
+      feeRow.style.display = 'none';
+    }
+
+    document.getElementById('cart-count').textContent = totalItems;
+    document.getElementById('float-count').textContent = totalItems;
+    document.getElementById('submit-btn').disabled = totalItems === 0;
+  }
+
+  function buildMessage(){
+    const keys = Object.keys(cart);
+    const nome = document.getElementById('nome').value.trim();
+    const endereco = document.getElementById('endereco').value.trim();
+    const horario = document.getElementById('horario').value.trim();
+    const pay = document.querySelector('input[name="pay"]:checked').value;
+
+    let lines = [];
+    lines.push("Olá! Quero fazer um pedido na Aqua Vida Itz 💧");
+    lines.push("");
+    lines.push(`*Modo:* ${deliveryMode === 'entregar' ? 'Entrega' : 'Retirada no local'}`);
+    lines.push("");
+    if (keys.length > 0){
+      lines.push("*Itens:*");
+      let total = 0;
+      keys.forEach(k => {
+        const item = cart[k];
+        const u = unitPrice(item);
+        const lineTotal = u * item.qty;
+        total += lineTotal;
+        lines.push(`• ${item.qty}x ${item.name} — R$${lineTotal.toFixed(2).replace('.', ',')}`);
+      });
+      lines.push("");
+      lines.push(`*Total: R$${total.toFixed(2).replace('.', ',')}*`);
+    } else {
+      lines.push("(quero combinar os itens por aqui mesmo)");
+    }
+    lines.push("");
+    if (nome) lines.push(`*Nome:* ${nome}`);
+    if (deliveryMode === 'entregar' && endereco) lines.push(`*Endereço:* ${endereco}`);
+    if (horario) lines.push(`*Horário preferido:* ${horario}`);
+    lines.push(`*Pagamento:* ${pay}`);
+
+    return lines.join("\n");
+  }
+
+  function buildOrderRecord(){
+    const keys = Object.keys(cart);
+    const nome = document.getElementById('nome').value.trim();
+    const endereco = document.getElementById('endereco').value.trim();
+    const horario = document.getElementById('horario').value.trim();
+    const pay = document.querySelector('input[name="pay"]:checked').value;
+
+    let total = 0;
+    const items = keys.map(k => {
+      const item = cart[k];
+      const u = unitPrice(item);
+      const lineTotal = u * item.qty;
+      total += lineTotal;
+      return { name: item.name, qty: item.qty, unitPrice: u, lineTotal };
+    });
+
+    return {
+      timestamp: new Date().toISOString(),
+      mode: deliveryMode,
+      items,
+      total,
+      nome: nome || null,
+      endereco: deliveryMode === 'entregar' ? (endereco || null) : null,
+      horario: horario || null,
+      pagamento: pay,
+    };
+  }
+
+  async function saveOrderToStorage(record){
+    try {
+      const key = 'order:' + Date.now() + ':' + Math.random().toString(36).slice(2,8);
+      await window.storage.set(key, JSON.stringify(record), true);
+    } catch (err) {
+      console.error('Não foi possível salvar o pedido para o painel admin:', err);
+    }
+  }
+
+  function sendOrder(){
+    const keys = Object.keys(cart);
+    if (keys.length === 0){
+      showToast("Adicione pelo menos um item antes de enviar", true);
+      document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    const message = buildMessage();
+    const record = buildOrderRecord();
+    saveOrderToStorage(record);
+    const url = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  function showToast(text, isWarning){
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-text').textContent = text;
+    toast.style.background = isWarning ? '#D6463A' : '#0B1F2B';
+    toast.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  function toggleFaq(el){
+    el.parentElement.classList.toggle('open');
+    el.querySelector('.chev').textContent = el.parentElement.classList.contains('open') ? '−' : '+';
+  }
+
+  function scrollToProducts(){
+    document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+  }
+  function scrollToOrder(){
+    document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ============ ADMIN PANEL LOGIC ============ */
+  const ADMIN_USER = "gui";
+  const ADMIN_PASS = "gui";
+  let secretClickCount = 0;
+  let secretClickTimer = null;
+
+  function handleSecretClick(){
+    secretClickCount++;
+    clearTimeout(secretClickTimer);
+    secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 1800);
+    if (secretClickCount >= 5){
+      secretClickCount = 0;
+      openAdminLogin();
+    }
+  }
+
+  function openAdminLogin(){
+    document.getElementById('admin-login-overlay').classList.add('show');
+    document.getElementById('admin-login-error').classList.remove('show');
+    document.getElementById('admin-user').value = '';
+    document.getElementById('admin-pass').value = '';
+    document.getElementById('admin-user').focus();
+  }
+
+  function closeAdminLogin(){
+    document.getElementById('admin-login-overlay').classList.remove('show');
+  }
+
+  function tryAdminLogin(){
+    const u = document.getElementById('admin-user').value.trim();
+    const p = document.getElementById('admin-pass').value;
+    if (u === ADMIN_USER && p === ADMIN_PASS){
+      closeAdminLogin();
+      openAdminPanel();
+    } else {
+      document.getElementById('admin-login-error').classList.add('show');
+    }
+  }
+
+  function openAdminPanel(){
+    document.getElementById('admin-panel-overlay').classList.add('show');
+    loadAdminOrders();
+  }
+
+  function closeAdminPanel(){
+    document.getElementById('admin-panel-overlay').classList.remove('show');
+  }
+
+  async function loadAdminOrders(){
+    const listEl = document.getElementById('admin-orders-list');
+    const subEl = document.getElementById('admin-panel-sub');
+    listEl.innerHTML = '<div class="admin-orders-empty">Carregando pedidos...</div>';
+    subEl.textContent = 'Carregando...';
+
+    try {
+      const listResult = await window.storage.list('order:', true);
+      const keys = (listResult && listResult.keys) ? listResult.keys : [];
+
+      if (keys.length === 0){
+        listEl.innerHTML = '<div class="admin-orders-empty">Nenhum pedido registrado ainda.</div>';
+        subEl.textContent = '0 pedidos no total';
+        return;
+      }
+
+      const orders = [];
+      for (const k of keys){
+        try {
+          const res = await window.storage.get(k, true);
+          if (res && res.value){
+            orders.push(JSON.parse(res.value));
+          }
+        } catch(e){ /* skip unreadable entries */ }
+      }
+
+      orders.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      subEl.textContent = orders.length + ' pedido' + (orders.length === 1 ? '' : 's') + ' no total';
+      renderAdminOrders(orders);
+    } catch (err) {
+      listEl.innerHTML = '<div class="admin-orders-empty">Erro ao carregar pedidos. Tente atualizar novamente.</div>';
+      subEl.textContent = 'Erro ao carregar';
+      console.error(err);
+    }
+  }
+
+  function renderAdminOrders(orders){
+    const listEl = document.getElementById('admin-orders-list');
+    const groups = {};
+    const dayLabelFmt = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+    const timeFmt = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+    orders.forEach(order => {
+      const d = new Date(order.timestamp);
+      const dayKey = d.toISOString().slice(0,10);
+      if (!groups[dayKey]) groups[dayKey] = { label: dayLabelFmt.format(d), orders: [] };
+      groups[dayKey].orders.push(order);
+    });
+
+    const dayKeys = Object.keys(groups).sort((a,b) => b.localeCompare(a));
+
+    listEl.innerHTML = dayKeys.map(dayKey => {
+      const group = groups[dayKey];
+      const cardsHtml = group.orders.map(order => {
+        const d = new Date(order.timestamp);
+        const itemsHtml = (order.items || []).map(it =>
+          `<div>${it.qty}x ${it.name} — R$${it.lineTotal.toFixed(2).replace('.', ',')}</div>`
+        ).join('');
+        return `
+          <div class="admin-order-card">
+            <div class="admin-order-top">
+              <div>
+                <div class="admin-order-name">${order.nome || 'Cliente não informado'}</div>
+                <div class="admin-order-time">${timeFmt.format(d)}</div>
+              </div>
+              <div class="admin-order-total">R$${order.total.toFixed(2).replace('.', ',')}</div>
+            </div>
+            ${order.endereco ? `<div class="admin-order-detail">📍 ${order.endereco}</div>` : ''}
+            ${order.horario ? `<div class="admin-order-detail">🕒 ${order.horario}</div>` : ''}
+            <div class="admin-order-items">${itemsHtml}</div>
+            <div class="admin-order-tags">
+              <span class="admin-order-tag mode">${order.mode === 'entregar' ? 'Entrega' : 'Retirada'}</span>
+              <span class="admin-order-tag pay">${order.pagamento}</span>
+            </div>
+          </div>`;
+      }).join('');
+
+      return `
+        <div class="admin-day-group">
+          <div class="admin-day-label">${group.label}</div>
+          ${cardsHtml}
+        </div>`;
+    }).join('');
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>
